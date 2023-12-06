@@ -150,7 +150,7 @@ function todosIguales(array) {
       let checker = array[0];
       if (checker != array [i]){
          return false;
-      } else { return true }
+      } else return true;
    }
 }
 
@@ -160,12 +160,16 @@ function mesesDelAño(array) {
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
    const arreglo = [];
-   for (let i = 0; i < array.length; i++){
-      if (array [i] != "Enero" || array [i] != "Marzo" || array[i] != "Noviembre"){
-         return "No se encontraron los meses pedidos"
+   for (mes of array) {
+      if (mes === 'Enero'){
+         arreglo.push(mes);
+      } else if (mes === 'Marzo'){
+         arreglo.push(mes);
+      } else if (mes === 'Noviembre'){
+         arreglo.push(mes);
       } else {
-         arreglo.push(array[i]);
-      } 
+         return 'No se encontraron los meses pedidos';
+      }
    } return arreglo;
 }
 
@@ -184,9 +188,9 @@ function mayorACien(array) {
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
    const mayores = [];
-   for (let i = 0; i < array.length; i++){
-      if (array[i] > 100){
-         mayores.push(array[i])
+   for (let item of array){
+      if (item > 100){
+         mayores.push(item)
       }
    } return mayores; 
 }
