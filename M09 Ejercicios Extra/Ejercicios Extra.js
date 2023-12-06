@@ -16,7 +16,16 @@ function numberOfCharacters(string) {
    // Las letras deben estar en orden alfabético.
    // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
    // Tu código:
-   
+   const sortedArr = string.split('').sort();
+   const sortedStr = sortedArr.join('');
+   let objetoFinal = {};
+   for (let i in sortedStr) {
+      const character = string[i];
+      if (!objetoFinal[character]){
+         objetoFinal[character] = 0;
+      }
+      objetoFinal[character]++;
+   } return objetoFinal;
 }
 
 function capToFront(string) {
@@ -25,7 +34,7 @@ function capToFront(string) {
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
-
+   
 }
 
 function asAmirror(frase) {
@@ -33,15 +42,7 @@ function asAmirror(frase) {
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
-   let nuevaFrase = frase.split(" ");
-   let fraseVolteada = "";
-   for (let palabra of nuevaFrase) {
-      for (let i = palabra.length -1; i <= 0; i--) {
-         fraseVolteada.push(palabra[i]);
-
-   }
-   
-   } return nuevaFrase;
+  
 }
 
 function capicua(numero) {
@@ -72,10 +73,7 @@ function sortArray(arrayOfStrings) {
    // de la longitud de cada string.
    // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
    // Tu código:
-   const newArray = [];
-   for (let i = 0; i < arrayOfStrings.length; i++){
-     // if (arrayOfStrings[i] <)
-   }
+   
 }
 
 function buscoInterseccion(array1, array2) {
@@ -85,6 +83,14 @@ function buscoInterseccion(array1, array2) {
    // Si no tienen elementos en común, retornar un arreglo vacío.
    // [PISTA]: los arreglos no necesariamente tienen la misma longitud.
    // Tu código:
+   let arreglo = [];
+   for (let item of array1){
+      for (let element of array2){
+         if (item === element) {
+            arreglo.push(item);
+         }
+      }
+   } return arreglo;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
