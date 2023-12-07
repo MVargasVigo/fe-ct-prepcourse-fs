@@ -34,7 +34,15 @@ function capToFront(string) {
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
-   
+   let upperCase = [];
+   let lowerCase = [];
+
+   for (let i = 0; i < string.length; i++){
+      if (string[i] === string[i].toUpperCase()) upperCase.push(string[i]);
+      else lowerCase.push(string[i]);
+   }
+   let retornable = [...upperCase, ...lowerCase];
+   return retornable.join('');
 }
 
 function asAmirror(frase) {
@@ -42,7 +50,15 @@ function asAmirror(frase) {
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
-  
+   /*tengo que separar la frase en palabras individuales, iterar cada palabra para imprimir su espejo y finalmente juntar todas las palabras en un solo string manteniendo el mismo orden*/
+  const arreglo = frase.split(' ');
+  let arregloVolteado = [];
+  for (word of arreglo) {
+      let palabra = "";
+      for (let i = word.length - 1; i >= 0; i--){
+         palabra += word[i];
+      } arregloVolteado.push(palabra);
+  } return arregloVolteado.join(' ');
 }
 
 function capicua(numero) {
@@ -73,6 +89,7 @@ function sortArray(arrayOfStrings) {
    // de la longitud de cada string.
    // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
    // Tu código:
+   /*debo iterar por cada elemento del arreglo, contar la longitud de cada una de ellas y sortearlo por dicha longitud*/
    
 }
 
@@ -82,7 +99,7 @@ function buscoInterseccion(array1, array2) {
    // [EJEMPLO]: [4,2,3] U [1,3,4] = [3,4].
    // Si no tienen elementos en común, retornar un arreglo vacío.
    // [PISTA]: los arreglos no necesariamente tienen la misma longitud.
-   // Tu código:
+   // Tu código:  
    let arreglo = [];
    for (let item of array1){
       for (let element of array2){
