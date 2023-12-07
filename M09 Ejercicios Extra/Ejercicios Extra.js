@@ -90,7 +90,7 @@ function sortArray(arrayOfStrings) {
    // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
    // Tu código:
    /*debo iterar por cada elemento del arreglo, contar la longitud de cada una de ellas y sortearlo por dicha longitud*/
-   
+   return arrayOfStrings.sort((a,b) => a.length - b.length);
 }
 
 function buscoInterseccion(array1, array2) {
